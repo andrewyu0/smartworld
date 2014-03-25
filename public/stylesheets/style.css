@@ -1,0 +1,185 @@
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/*@font-face {*/
+  /*font-family: 'gothamhtf-book';*/
+  /*src: url('/gothamhtf-book-webfont.eot');*/
+  /*src: url('/gothamhtf-book-webfont.eot?#iefix') format('embedded-opentype'),*/
+       /*url('/gothamhtf-book-webfont.woff') format('woff'),*/
+       /*url('/gothamhtf-book-webfont.ttf') format('truetype');*/
+  /*font-weight: normal;*/
+  /*font-style: normal;*/
+/*}*/
+/*@font-face {*/
+  /*font-family: 'gothamhtf-light';*/
+  /*src: url('/gothamhtf-light-webfont.eot');*/
+  /*src: url('/gothamhtf-light-webfont.eot?#iefix') format('embedded-opentype'),*/
+       /*url('/gothamhtf-light-webfont.woff') format('woff'),*/
+       /*url('/gothamhtf-light-webfont.ttf') format('truetype');*/
+  /*font-weight: normal;*/
+  /*font-style: normal;*/
+/*}*/
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #909092;
+}
+
+#background {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/bg-off.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.background-fill {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.bulb {
+  width: 40%;
+  height: 80%;
+  background-image: url(../images/bulb-off.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -20%;
+  left: 20%
+}
+
+.bulb-highlight {
+  width: 40%;
+  height: 80%;
+  -webkit-filter: saturate(10000%) hue-rotate(0deg) blur(25px);
+  -moz-filter: saturate(10000%) hue-rotate(0deg) blur(25px);
+  -o-filter: saturate(10000%) hue-rotate(0deg) blur(25px);
+  -ms-filter: saturate(10000%) hue-rotate(0deg) blur(25px);
+  filter: saturate(10000%) hue-rotate(0deg) blur(25px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -20%;
+  left: 20%;
+}
+
+.bulb-diffuser {
+  width: 40%;
+  height: 80%;
+  -webkit-filter: saturate(10000%) hue-rotate(0deg);
+  -moz-filter: saturate(10000%) hue-rotate(0deg);
+  -o-filter: saturate(10000%) hue-rotate(0deg);
+  -ms-filter: saturate(10000%) hue-rotate(0deg);
+  filter: saturate(10000%) hue-rotate(0deg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -20%;
+  left: 20%;
+}
+
+.bulb-shadow {
+  width: 40%;
+  height: 80%;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  opacity: 0;
+}
+
+#previous-state {
+  z-index: 2;
+}
+
+#current-state {
+  z-index: 3;
+}
+
+#current-state, #previous-state {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/bg-off.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#content {
+  width: 30%;
+  background-color: rgba(255, 255, 255, .85);
+  box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+  -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, .3);
+  -moz-box-shadow: 0 0 50px rgba(255, 255, 255, .3);
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  max-height: 70%;
+  overflow: auto;
+  z-index: 4;
+}
+  #content div {
+    margin: 7% 10%;
+    line-height: 1.25em;
+  }
+  #content h1 {
+    font-family: 'gothamhtf-book', sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+  }
+  #content p, #content form, #content input {
+    font-size: .9em;
+    font-family: 'gothamhtf-light', sans-serif;
+  }
+  #content input {
+    width: 100px;
+  }
+  #content .smaller {
+    font-size: 11px;
+    line-height: 150%;
+  }
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 1024px) {
+  #content {
+    left: auto;
+    right: 10%;
+    width: 40%;
+  }
+  #content p img {
+    width: 100px;
+  }
+  .bulb, .bulb-highlight, .bulb-diffuser, .bulb-shadow {
+    left: 10%;
+  }
+}
