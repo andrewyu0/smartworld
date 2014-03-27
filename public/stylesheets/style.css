@@ -8,24 +8,37 @@
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-/*@font-face {*/
-  /*font-family: 'gothamhtf-book';*/
-  /*src: url('/gothamhtf-book-webfont.eot');*/
-  /*src: url('/gothamhtf-book-webfont.eot?#iefix') format('embedded-opentype'),*/
-       /*url('/gothamhtf-book-webfont.woff') format('woff'),*/
-       /*url('/gothamhtf-book-webfont.ttf') format('truetype');*/
-  /*font-weight: normal;*/
-  /*font-style: normal;*/
-/*}*/
-/*@font-face {*/
-  /*font-family: 'gothamhtf-light';*/
-  /*src: url('/gothamhtf-light-webfont.eot');*/
-  /*src: url('/gothamhtf-light-webfont.eot?#iefix') format('embedded-opentype'),*/
-       /*url('/gothamhtf-light-webfont.woff') format('woff'),*/
-       /*url('/gothamhtf-light-webfont.ttf') format('truetype');*/
-  /*font-weight: normal;*/
-  /*font-style: normal;*/
-/*}*/
+/*---------------------------------------
+   Typography
+-----------------------------------------*/
+
+/* FONT FACE LOADER */
+@font-face {
+  font-family: 'Lane';
+  src: url('../fonts/lanenar_Lane.eot');
+  src: url('../fonts/lanenar_Lane.eot?#iefix') format('embedded-opentype'), url('../fonts/lanenar_Lane.woff') format('woff'), url('../fonts/lanenar_Lane.ttf') format('truetype'), url('../fonts/lanenar_Lane.svg#Lane') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+  @font-face {
+    font-family: 'Lane';
+    src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
+  }
+}
+
+/* HEADINGS */
+
+h2 {
+  font-family: 'Lane', sans-serif;
+  font-size: 3.125rem;
+}
+
+/*---------------------------------------
+   Body Content
+-----------------------------------------*/
 
 body {
   margin: 0;
@@ -33,6 +46,11 @@ body {
   width: 100%;
   height: 100%;
   background-color: #909092;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
 }
 
 #background {
@@ -137,10 +155,10 @@ body {
 
 #content {
   width: 30%;
-  background-color: rgba(255, 255, 255, .85);
-  box-shadow: 0 0 5px rgba(255, 255, 255, .3);
-  -webkit-box-shadow: 0 0 50px rgba(255, 255, 255, .3);
-  -moz-box-shadow: 0 0 50px rgba(255, 255, 255, .3);
+  background-color: rgba(50, 50, 50, .3);
+  box-shadow: 0 0 5px rgba(50, 50, 50, .3);
+  -webkit-box-shadow: 0 0 50px rgba(50, 50, 50, .3);
+  -moz-box-shadow: 0 0 50px rgba(50, 50, 50, .3);
   position: absolute;
   top: 10%;
   left: 50%;
@@ -148,26 +166,11 @@ body {
   overflow: auto;
   z-index: 4;
 }
-  #content div {
-    margin: 7% 10%;
-    line-height: 1.25em;
-  }
-  #content h1 {
-    font-family: 'gothamhtf-book', sans-serif;
-    text-transform: uppercase;
-    font-size: 1em;
-  }
-  #content p, #content form, #content input {
-    font-size: .9em;
-    font-family: 'gothamhtf-light', sans-serif;
-  }
-  #content input {
-    width: 100px;
-  }
-  #content .smaller {
-    font-size: 11px;
-    line-height: 150%;
-  }
+#content div {
+  margin: 7% 10%;
+  line-height: 1.25em;
+}
+
 
 /* iPhone [portrait + landscape] */
 @media only screen and (max-device-width: 1024px) {
