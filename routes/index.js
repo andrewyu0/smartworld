@@ -16,6 +16,10 @@ exports.index = function(req, res){
   var location = shasum.digest('hex');
 
   var myRootRef = new Firebase('https://otto.firebaseio.com/');
-  myRootRef.child(location).set({on:true, h:0, s:0, b :1, a:1});
+  myRootRef.child(location).once('value', function(loc) {
+    if (loc.val() === null) {
+      myRootRef.child(location).set({on:true, h:0, s:0, b :1, a:1});
+    }
+  });
   res.render('index', { loc: location });
 };
