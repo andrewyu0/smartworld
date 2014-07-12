@@ -16,11 +16,11 @@ block content
       .bulb-shadow(style='background-image: url(./images/bulb-shadow.png); opacity: -0.552261112231089;')
     #content
       .inner
-        h2 Smart World
+        h2 Lumenos
         p
-          | This virtual bulb can be controlled using the OTTO mobile app.
+          | Welcome to Lumenos, this is your virtual online bulb.  For the best viewing experience, expand your browser to the full screen.
         p
-          | Simply leave this page open on your Mac, PC or tablet, and open the OTTO mobile app. You’ll need to ensure that you're connected to the same Wi-Fi network.
+          | Simply leave this page open on your Mac, PC or tablet, and open the Lumenos app. You’ll need to ensure that you're connected to the same Wi-Fi network.
   script(src='./javascripts/jquery.min.js')
   script(type='text/javascript', src='./javascripts/Colour.js')
   script(type='text/javascript', src='./javascripts/otto.js')
@@ -29,8 +29,8 @@ block content
   img(src='./images/bulb-shadow.png', style='display: none;')
   script(type='text/javascript', src='https://cdn.firebase.com/js/client/1.0.6/firebase.js')
   script(type='text/javascript').
-    var ottoSWLightRef = new Firebase('https://otto.firebaseio.com/'+ "#{loc}");
-    ottoSWLightRef.on('value', function(light) {
+    var lumenosLightRef = new Firebase('https://otto.firebaseio.com/'+ "#{loc}");
+    lumenosLightRef.on('value', function(light) {
       var hsv = light.val();
       var lightState = {
         brightness: hsv.b,
